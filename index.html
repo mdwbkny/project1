@@ -1,11 +1,32 @@
 <html>
 <head>
-	<title>Blackjack</title>
+	<title>Spirit of Blackjack</title>
+	<header>Spirit of Blackjack</header>
 	<script type="text/javascript" src="app.js"></script>
 	<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
 	<link rel="stylesheet" type="text/css" href="styles.css">
+	<link href='https://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
 </head>
 <body>
-
+	<div id="score-container">
+		<div class="score" id="current-score"></div>
+		<div class="score" id="current-bet"></div>
+	</div>
+	<div id="button-container-2">
+		<button id="up">+</button>
+		<button id="down">-</button>
+	</div> 	
+	<div id="dealer-container">
+		<div class="cards" id="dcard1"></div>
+		<div class="cards" id="dcard2"></div>
+	</div>
+	<div id="player-container">
+		<div class="cards" id="pcard1"></div>
+		<div class="cards" id="pcard2"></div>
+	<div id="button-container-1">
+		<button id="deal-button">Deal</button>
+		<button id="hit-button">Hit</button>
+		<button id="stay-button">Stay</button>
+	</div>
 </body>
 </html>

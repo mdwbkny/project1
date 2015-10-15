@@ -1,3 +1,75 @@
+/********************
+PAGE DESIGN
+********************/
+
 body {
-	background-color: blue;
+	background: url("http://123blackjackonline.com/wp-content/uploads/2015/04/Blackjack1288x716-1288x716.jpg");
 }
+
+header {
+	font-family: 'Lobster', cursive;
+	text-align: center;
+	font-size: xx-large;
+	padding-top: 20px;
+	color: white;
+}
+
+/********************
+SCORE
+********************/
+
+#score-container {
+	margin: 25 0 0 0px;
+	height: 25px;
+	text-align: center;
+	width: 100%;
+}
+
+.score {
+	background-color: white;
+	height: 25px;
+	width: 50px;
+	border: 1px solid black;
+	text-align: center;
+	display: inline-block;
+}
+
+/********************
+CARDS
+********************/
+
+#dealer-container {
+	margin: 20px auto;
+	height: 180px;
+	text-align: center;
+}
+
+#player-container {
+	margin: 20px auto;
+	height: 180px;
+	text-align: center;
+}
+
+.cards {
+	background-color: white;
+	border: 1px solid black;
+	height: 175px;
+	width: 130px;
+	display: inline-block;
+}
+
+/********************
+BUTTONS
+********************/
+
+#button-container-1 {
+	margin-top: 20px;
+}
+
+#button-container-2 {
+	margin-top: 10px;
+	margin-bottom: 10px;
+	text-align: center;
+}
+
+
