@@ -45,17 +45,25 @@ CARDS
 }
 
 #player-container {
-	margin: 20px auto;
+	margin: 50px auto;
 	height: 180px;
 	text-align: center;
 }
 
 .cards {
-	background-color: white;
+	background: white;
 	border: 1px solid black;
-	height: 175px;
-	width: 130px;
+	height: 90px;
+	width: 70px;
 	display: inline-block;
+}
+
+#dealer-container h2 {
+	color: white;
+}
+
+#player-container h2 {
+	color: white;
 }
 
 /********************

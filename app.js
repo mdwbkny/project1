@@ -1,8 +1,47 @@
 console.log("Is this thing on?");
 
-window.onload = function() {
+// var currentBet = {
 
-var cards = ["H-2", "H-3", "H-4", "H-5", "H-6", "H-7", "H-8", "H-9", "H-10", "H-J", "H-Q", "H-K", "H-A"
-			"C-2", "C-3", "C-4", "C-5", "C-6", "C-7", "C-8", "C-9", "C-10", "C-J", "C-Q", "C-K", "C-A"
-			"D-2", "D-3", "D-4", "D-5", "D-6", "D-7", "D-8", "D-9", "D-10", "D-J", "D-Q", "D-K", "D-A"
-			"S-2", "S-3", "S-4", "S-5", "S-6", "S-7", "S-8", "S-9", "S-10", "S-J", "S-Q", "S-K", "S-A"];
+// 	currentBetDefault: 1000,
+// 	player: 1000 
+// 	currentBet: 100,
+// }
+
+// window.onload = function() {
+
+var cards = ["H2", "H3", "H4", "H5", "H6", "H7", "H8", "H9", "H10", "HJ", "HQ", "HK", "HA", "C2", "C3", "C4", "C5", "C6", "C7", "C8", "C9", "C10", "CJ", "CQ", "CK", "CA", "D2", "D3", "D4", "D5", "D6", "D7", "D8", "D9", "D10", "DJ", "DQ", "DK", "DA", "S2", "S3", "S4", "S5", "S6", "S7", "S8", "S9", "S10", "SJ", "SQ", "SK", "SA"];
+
+
+// var turnArray = [];
+
+var dcard1 = document.getElementById("dcard1");
+var dcard2 = document.getElementById("dcard2");
+var pcard1 = document.getElementById("pcard1");
+var pcard2 = document.getElementById("pcard2");
+var dealButton = document.getElementById("deal-button");
+
+// }
+
+// MVP 
+// • 52 cards - storage for 52 cards
+// • Cards have value
+// • Cards cant be dealt twice
+// • Ace is an 11 unless you bust, then its a 1;
+// • Cards are dealt at random
+// • Hands calculate the value of each card 
+// • Hit means get another card
+// • Stand/stay means ur basically done with ur turn
+// • Bust is over 21
+// • 21 is blackjack
+// • Turns dont alternate
+// • Buttons and on clicks (barebones html and dom manipulation)
+
+// Bonus
+// - Betting
+// - Animations
+// - Images
+
+
+// - Pseudo code each of these game logic requirements
+// - If the pseudo code involves more than one step, break it down into another pseudo code objective
+// - Once it is one step, code it (DRY: 1 function does 1 thing and does it well)
