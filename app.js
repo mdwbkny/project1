@@ -1,5 +1,6 @@
 console.log("Is this thing on?");
 
+// Creation of Variables
 var dealerHand = new Array();
 var playerHand = new Array();
 var dealer;
@@ -9,7 +10,7 @@ var cardSuitAbbr;
 var dealerTotalScore;
 var playerTotalScore;
 var hand;
-var showHoleCard;
+var showStartCard;
 var dealerStatus;
 var playerStatus;
 
@@ -40,9 +41,6 @@ function Shuffle() {
         //Get Card 2
         card2Index = Math.floor(Math.random() * 52);
         card2 = cardDeck.deck[card2Index];
-        //Swap
-        cardDeck.deck[card1Index] = card2;
-        cardDeck.deck[card2Index] = card1;
     }
 }
 
@@ -74,33 +72,33 @@ function GetCardSuit(cardSuitAbbr) {
     var cardNameSuit = "";
     switch (cardSuitAbbr) {
         case 1:
-            cardNameSuit = "Club";
+            cardNameSuit = "Clubs";
             break;
         case 2:
-            cardNameSuit = "Spade";
+            cardNameSuit = "Spades";
             break;
         case 3:
-            cardNameSuit = "Heart";
+            cardNameSuit = "Hearts";
             break;
         case 4:
-            cardNameSuit = "Diamond";
+            cardNameSuit = "Diamonds";
     }
     return cardNameSuit;
 }
 
-// Prints shuffled cards - Test Script
+// Prints shuffled cards
 function PrintCards() {
     for (i = 0; i < 52; i++) {
         document.write(i + 1 + ": " + GetCardValue(cardDeck.deck[i].cardValue) + " of " + GetCardSuit(cardDeck.deck[i].cardSuit) + "<br>");
     }
 }
 
-// Starts new game - Calls for DeckCards(), Shuffle() and Deal()
+// Starts a new game - Calls for DeckCards(), Shuffle() and Deal()
 function NewGame() {
     // Clears the dealer and player hands to start new game
     dealerHand = new Array();
     playerHand = new Array();
-    showHoleCard = false;
+    showStartCard = false;
     // Creates the deck of cards
     cardDeck = DeckCards();
     // Shuffles the deck of cards
@@ -129,7 +127,7 @@ function DisplayHands() {
     dealer.innerHTML = "";
     player.innerHTML = "";
     // Displays dealer cards - At the beginning of the game, hides one dealer card or show all dealer cards from second round
-    if (showHoleCard == true) {
+    if (showStartCard === true) {
         for (i = 0; i < dealerHand.length; i++)
             dealer.innerHTML += GetCardValue(dealerHand[i].cardValue) + " of " + GetCardSuit(dealerHand[i].cardSuit) + "<br>";
     }
@@ -149,9 +147,9 @@ function DisplayScores() {
     dealerTotalScore = document.getElementById('dealerScore');
     dealerTotalScore.innerHTML = "";
     // Displays dealer score - At the beginning of the game, shows score of just one card for the dealer
-    if (showHoleCard == true)
+    if (showStartCard === true)
         dealerTotalScore.innerHTML = Score(dealerHand);
-    else if (dealerHand[1].cardValue == 1 || dealerHand[1].cardValue == 11 || dealerHand[1].cardValue == 12 || dealerHand[1].cardValue == 13)
+    else if (dealerHand[1].cardValue === 1 || dealerHand[1].cardValue === 11 || dealerHand[1].cardValue === 12 || dealerHand[1].cardValue == 13)
         dealerTotalScore.innerHTML += "More than " + 10;
     else 
         dealerTotalScore.innerHTML += "More than " + dealerHand[1].cardValue;
@@ -162,22 +160,22 @@ function DisplayScores() {
     playerTotalScore.innerHTML = "";
     playerTotalScore.innerHTML = Score(playerHand);
     playerStatus = Score(playerHand);
-    // Check for winner and looser. Calls GameStatus()
+    // Check for winner and loser. Calls GameStatus()
     GameStatus();
 }
 
 // Player clicks Hit button. Calls DisplayHands() and Deal()
 function Hit() {
-    showHoleCard = true
+    showStartCard = true
     playerHand[playerHand.length] = Deal();
-    DisplayHands(showHoleCard);
+    DisplayHands(showStartCard);
 }
 
 // Player clicks Stand button. Calls DisplayHands() and Deal()
 function Stand() {
-    showHoleCard = true
+    showStartCard = true
     dealerHand[dealerHand.length] = Deal();
-    DisplayHands(showHoleCard);
+    DisplayHands(showStartCard);
 }
 
 // Calculates the dealer and player scores
@@ -187,7 +185,7 @@ function Score(hand) {
     var cardsvalue = 0;
     for (i = 0; i < hand.length; i++) {
         //Is card Ace?
-        if (hand[i].cardValue == 1) {
+        if (hand[i].cardValue === 1) {
             ace = true;
             cardsvalue += 1;
         }
@@ -206,22 +204,22 @@ function Score(hand) {
 // Check for winner or loser and shows result
 function GameStatus() {
     gameFinalStatus = document.getElementById("gameStatus");
-    gameFinalStatus.innerHTML = "Playing...";
-    if (dealerStatus == 21 && showHoleCard == false)
+    gameFinalStatus.innerHTML = "...";
+    if (dealerStatus === 21 && showStartCard === false)
         gameFinalStatus.innerHTML = "Blackjack! Dealer wins!";
-    else if (playerStatus == 21 && showHoleCard == false)
+    else if (playerStatus === 21 && showStartCard === false)
         gameFinalStatus.innerHTML = "Blackjack! Player wins!";
-    else if (dealerStatus == playerStatus && showHoleCard == false)
-        gameFinalStatus.innerHTML = "Playing...";
-    else if (dealerStatus == playerStatus && showHoleCard == true)
+    else if (dealerStatus === playerStatus && showStartCard === false)
+        gameFinalStatus.innerHTML = "...";
+    else if (dealerStatus === playerStatus && showStartCard === true)
         gameFinalStatus.innerHTML = "Tie!";
-    else if (dealerStatus == 21 && playerStatus < 21 && showHoleCard == true)
+    else if (dealerStatus === 21 && playerStatus < 21 && showStartCard === true)
         gameFinalStatus.innerHTML = "Dealer wins!";
-    else if (playerStatus == 21 && dealerStatus < 21 && showHoleCard == true)
+    else if (playerStatus === 21 && dealerStatus < 21 && showStartCard === true)
         gameFinalStatus.innerHTML = "Player wins!";
-    else if (dealerStatus > 21 && playerStatus < 21 && showHoleCard == true)
+    else if (dealerStatus > 21 && playerStatus < 21 && showStartCard === true)
         gameFinalStatus.innerHTML = "Player wins!";
-    else if (playerStatus > 21 && dealerStatus < 21 && showHoleCard == true)
+    else if (playerStatus > 21 && dealerStatus < 21 && showStartCard === true)
         gameFinalStatus.innerHTML = "Dealer wins!";
 
     // MVP 
