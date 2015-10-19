@@ -1,6 +1,6 @@
 WDI - Project 1 - Blackjack
 
-To make this Blackjack game I used HTML, CSS, and JavaScript. It funtions, although there are some bugs in it. 
+To make this Blackjack game I used HTML, CSS, and JavaScript. It functions, although there are some bugs in it. 
 
 Things I would add to it:
 - Add a betting system
