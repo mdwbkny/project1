@@ -1,34 +1,30 @@
 <html>
 <head>
-	<title>Spirit of Blackjack</title>
-	<header>Spirit of Blackjack</header>
-	<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
-	<link rel="stylesheet" type="text/css" href="styles.css">
-	<link href='https://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
+    <title>Spirit of Blackjack</title>
+    <header>Spirit of Blackjack</header>
+    <script type="text/javascript" src="app.js"></script>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link href='https://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
 </head>
+<center>
 <body>
-	<div id="score-container">
-		<div class="score" id="current-score">$1,000</div>
-		<div class="score" id="current-bet">$100</div>
-	</div>
-	<div id="button-container-2">
-		<button id="up">+</button>
-		<button id="down">-</button>
-	</div> 	
-	<div id="dealer-container">
-		<h2>Dealer</h2>
-		<div class="cards" id="dcard1"></div>
-		<div class="cards" id="dcard2"></div>
-	</div>
-	<div id="player-container">
-		<h2>Player</h2>
-		<div class="cards" id="pcard1"></div>
-		<div class="cards" id="pcard2"></div>
-	<div id="button-container-1">
-		<button id="deal-button">Deal</button>
-		<button id="hit-button">Hit</button>
-		<button id="stay-button">Stay</button>
-	</div>
-	<script type="text/javascript" src="app.js"></script>
+    <div id="main">
+        <h3>Game Status:</h3>
+        <div id="gameStatus"></div>
+        <h3>Dealer Hand:</h3>
+        <div id="dealerDiv"></div>
+        <h3>Player Hand:</h3>
+        <div id="playerDiv"></div>
+        <h3>Dealer Score:</h3>
+        <div id="dealerScore"></div>
+        <h3>Player Score:</h3>
+        <div id="playerScore"></div>
+        <div id="controls">
+            <button type="button" id="btnHit" value="Hit" onclick="Hit()">Hit</button>
+            <button type="button" id="btnStand" value="Stand" onclick="Stand()">Stand</button>
+        </div>
+        <button type="button" id="btnNewGame" value="New Game" onclick="NewGame()">New Game</button>
+    </div>
+</center>
 </body>
 </html>
