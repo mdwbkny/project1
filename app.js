@@ -223,4 +223,28 @@ function GameStatus() {
         gameFinalStatus.innerHTML = "Player wins!";
     else if (playerStatus > 21 && dealerStatus < 21 && showHoleCard == true)
         gameFinalStatus.innerHTML = "Dealer wins!";
+
+    // MVP 
+// • 52 cards - storage for 52 cards
+// • Cards have value
+// • Cards cant be dealt twice
+// • Ace is an 11 unless you bust, then its a 1;
+// • Cards are dealt at random
+// • Hands calculate the value of each card 
+// • Hit means get another card
+// • Stand/stay means ur basically done with ur turn
+// • Bust is over 21
+// • 21 is blackjack
+// • Turns dont alternate
+// • Buttons and on clicks (barebones html and dom manipulation)
+
+// Bonus
+// - Betting
+// - Animations
+// - Images
+
+
+// - Pseudo code each of these game logic requirements
+// - If the pseudo code involves more than one step, break it down into another pseudo code objective
+// - Once it is one step, code it (DRY: 1 function does 1 thing and does it well)
 }
